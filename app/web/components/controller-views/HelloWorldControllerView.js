@@ -1,15 +1,12 @@
-import React, { Component } from 'react';
-import HelloWorldStore from '../../../.shared/stores/HelloWorldStore';
+import React from 'react';
 import Actions from '../../../.shared/actions/HelloWorldActionCreators';
-import Bla from '../../../.shared/HelloWorldControllerView';
+import HelloWorldControllerViewBase from '../../../.shared/components/controller-views/HelloWorldControllerViewBase';
 
-export default class HelloWorld extends Bla {
-
-
+export default class HelloWorldControllerView extends HelloWorldControllerViewBase {
 	render() {
 		return (
-			<div className="hello-world" onClick={Actions.increaseCounter} >
-				I am clicked sss {this.state.clicksCounter}
+			<div onClick={Actions.increaseCounter} >
+				I am clicked {this.state.clicksCounter}
 			</div>
 		);
 	}

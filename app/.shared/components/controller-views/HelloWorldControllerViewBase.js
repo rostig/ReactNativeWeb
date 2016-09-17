@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import HelloWorldStore from './stores/HelloWorldStore';
+import HelloWorldStore from '../../stores/HelloWorldStore';
 
-export default class HelloWorld extends Component {
+class HelloWorldControllerViewBase extends Component {
 	constructor(props) {
 		super(props);
 		this.state = getStateFromStore();
@@ -26,4 +26,6 @@ const getStateFromStore = () => {
 		clicksCounter: HelloWorldStore.getClicksCounter()
 	}
 };
+
+export default HelloWorldControllerViewBase;
 

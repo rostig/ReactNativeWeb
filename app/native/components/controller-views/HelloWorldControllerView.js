@@ -1,23 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
-import HelloWorldStore from '../../../.shared/stores/HelloWorldStore';
 import Actions from '../../../.shared/actions/HelloWorldActionCreators';
+import HelloWorldControllerViewBase from '../../../.shared/components/controller-views/HelloWorldControllerViewBase';
 
-class HelloWorldControllerView extends Component {
-	constructor(props) {
-		super(props);
-		this.state = getStateFromStore();
-		this._onChange = this._onChange.bind(this);
-	}
-
-	componentDidMount() {
-		HelloWorldStore.addChangeListener(this._onChange);
-	}
-
-	componentWillUnmount() {
-		HelloWorldStore.removeChangeListener(this._onChange);
-	}
-
+class HelloWorldControllerView extends HelloWorldControllerViewBase {
 	render() {
 		return (
 			<View style={styles.container}>
@@ -28,16 +14,6 @@ class HelloWorldControllerView extends Component {
 				</TouchableHighlight>
 			</View>
 		);
-	}
-
-	_onChange() {
-		this.setState(getStateFromStore());
-	}
-}
-
-const getStateFromStore = () => {
-	return {
-		clicksCounter: HelloWorldStore.getClicksCounter()
 	}
 };
 
