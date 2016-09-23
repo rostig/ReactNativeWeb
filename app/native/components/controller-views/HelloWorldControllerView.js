@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
-import Actions from '../../../.shared/actions/HelloWorldActionCreators';
-import HelloWorldControllerViewBase from '../../../.shared/components/controller-views/HelloWorldControllerViewBase';
+import Actions from '../../../_shared/actions/HelloWorldActionCreators';
+import HelloWorldControllerViewBase from '../../../_shared/components/controller-views/HelloWorldControllerViewBase';
 
 class HelloWorldControllerView extends HelloWorldControllerViewBase {
 	render() {
